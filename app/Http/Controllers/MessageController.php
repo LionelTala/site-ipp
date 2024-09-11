@@ -11,12 +11,14 @@ class MessageController extends Controller
         $request->validate([
             'email' => 'required|email',
             'message' => 'required',
-            'numero' => 'required'
+            'numero' => 'required',
+            'nom'=>'required',
         ]);
-        $message = new Message();
+         $message = new Message();
         $message->email = $request->email;
         $message->message = $request->message;
         $message->numero = $request->numero;
+        $message->nom = $request->nom;
         $message->save();
         return redirect()->back()->with('success','Message envoyer nous vous contacterons par mail ou sur Whatssap');
     }

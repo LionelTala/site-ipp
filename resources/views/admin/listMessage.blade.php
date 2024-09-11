@@ -65,8 +65,8 @@
               
             
             <div class="message">
-                <p style="font-size: 15"> Message De :   {{$message->email}} Numero : {{$message->numero}}</p>
-               <p> {{$message->message}}</p>
+                <p style="font-size: 15">{{$message->nom}} {{$message->numero}}  {{$message->email}}</p>
+               <p> {{$message->message}}  </p>
               <div style="font-size: 10"> Recu le : {{ $message->created_at}} 
               </div>
 

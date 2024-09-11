@@ -36,8 +36,15 @@ Route::get('/Contact', function(){
 })->name('contact');
 
 Route::post('/save', [InscriptionController::class, 'save'])->name('save');
-Route::get('/AdminIPP', [InscriptionController::class, 'get'])->name('admin-home');
+Route::get('/Candidature', [InscriptionController::class, 'get'])->name('admin-home')->middleware('auth');
+Route::get('/AdminIPP', [AdminController::class, 'home'])->name('homeAdmin');
+Route::get('/login', [AdminController::class, 'home'])->name('homeAdmin');
+
+Route::post('/login',[AdminController::class,'login'])->name('login');
+Route::get('/logout',[AdminController::class,'logout'])->name('logout');
+
+
 Route::post('/message', [MessageController::class, 'new'])->name('newMessage');
-Route::get('/Admin-Message', [MessageController::class, 'get'])->name('getMessage');
+Route::get('/Admin-Message', [MessageController::class, 'get'])->name('getMessage')->middleware('auth');
  
 

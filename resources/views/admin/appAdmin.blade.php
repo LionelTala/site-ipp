@@ -5,6 +5,7 @@
     <title>@yield('titre')</title>
     <meta name="IPP Un centre de formation de qualite dans le domaine du paramedicale" 
     content="Decouvrez tous sur IPP ici">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" type="image/png" sizes="16x16"  href="{{asset('images/favicon.png')}}">
  
@@ -76,7 +77,11 @@ transition: opacity 0.4s ease-out;
     </script>
 
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-success" >
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success"  style="position: fixed; overflow: hidden;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1;">
             <div class="container">
                 <a class="navbar-brand perso_nav" href="#">
                     <img src="{{ asset('images/logo.jpg') }}" alt="Logo" height="30" class="rounded">
@@ -99,6 +104,10 @@ transition: opacity 0.4s ease-out;
                     </ul>
                 </div>
             </div>
+            <a href="{{route('logout')}}">
+                <button class="btn btn-warning">Deconnexion</button>
+
+            </a>
         </nav>
 
     </header>

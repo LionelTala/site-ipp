@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('email');
             $table->string('message');
             $table->string('numero');
+            $table->string('nom');
+
         });
     }
 
